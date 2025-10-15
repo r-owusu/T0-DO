@@ -1,0 +1,103 @@
+body {
+    background-color: rgb(33, 7, 57);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-size: 40px;
+}
+#bodyforhome  {
+    align-items: center;
+    justify-content: center;
+  
+    color: rgb(79, 97, 79);
+    font-size: 90px;
+}
+#bodyforhome > p {
+    color: white;
+    margin-top: 350px;
+}
+.bbh-sans-hegarty-regular {
+  font-family: "BBH Sans Hegarty", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.start {
+    display: grid;
+    color: rgb(10, 10, 11);
+     font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 25px;
+    border-radius: 12px;
+   padding: 0px;
+   margin: 20px;
+   padding-top: 10px;
+}
+
+#bodyforsecondpage{
+   display: grid;
+   grid-template-rows: 270px 460px 100px;
+   
+   margin: 0px;
+padding: 0px;
+border: 0px;
+}
+#bodyforsecondpage>p{
+font-family: "Open Sans", sans-serif;
+ font-size: 50px;
+ padding-top: 90px;
+}
+.topsort {
+   display: flex;
+    border-radius: 10px;
+   width: 370px;   
+    padding: 0px;
+    height: auto;
+    margin-top: 20px;
+ background-color: rgb(82, 63, 154);
+      
+}
+.schedule, .note{ 
+   flex: 1 ;
+    padding: 0px;
+    margin: 0px;
+ border: 0px;
+color: white;
+background: transparent;
+transition: 0.4s;
+cursor: pointer;
+}
+.note {   
+    margin: 0px;
+    border: 0px;   
+}
+.active{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+.month, .year{
+    font-size: 20px;
+}
+.calender {
+    border: 5px solid white;
+    padding: 20px;
+}
+.days{
+    font-size: 18px;
+    padding: 0px;
+    gap: 0px;
+}
+.calender{
+    display: grid;
+}
+.dates{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    font-size: 18px;
+}
+.dates>div {
+padding: 10px;
+}
