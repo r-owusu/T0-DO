@@ -3,7 +3,7 @@ body {
     color: white;
     text-align: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 20px;
 }
 #bodyforhome  {
     align-items: center;
@@ -51,8 +51,9 @@ font-family: "Open Sans", sans-serif;
 }
 .topsort {
    display: flex;
+  
     border-radius: 10px;
-   width: 370px;   
+   width: auto;   
     padding: 0px;
     height: auto;
     margin-top: 20px;
@@ -78,14 +79,21 @@ cursor: pointer;
     color: white;
     border-radius: 5px;
 }
-.month, .year{
-    font-size: 20px;
+
+.monthyear{
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+    justify-content: center;
+   
 }
 .calender {
-    border: 5px solid white;
+    border: 5px solid rgb(219, 218, 232);
     padding: 20px;
 }
 .days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     font-size: 18px;
     padding: 0px;
     gap: 0px;
@@ -96,8 +104,12 @@ cursor: pointer;
 .dates{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    font-size: 18px;
+    font-size: 13px;
 }
 .dates>div {
 padding: 10px;
+}
+.hidden {
+    display: none;
+    visibility: hidden;
 }
