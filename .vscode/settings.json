@@ -1,0 +1,7 @@
+{
+    "editor.inlineSuggest.edits.showCollapsed": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "typescript.suggest.completeFunctionCalls": true
+}
