@@ -159,7 +159,7 @@ done.onclick = function(){
 var eventTitleValue = document.querySelector('#eventTitle').value;
 var placeValue =document.querySelector('#place').value;
 var noteValue= document.querySelector('#notes').value;
-var isFullday = document.querySelector('#scheduletoggle').checked;
+var isFullday = document.querySelector('#Fulldaytoggle').checked;
 var newEvent = document.createElement('div');
 newEvent.classList.add('event');
 

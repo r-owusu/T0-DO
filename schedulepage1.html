@@ -25,7 +25,7 @@
     <section class="topsort">
  
     <button class="schedulebutton">Schedule</button>
-    <button class="note">Note</button>
+    <button class="noteButton">Note</button>
     </div>
     </section>
     <section class="calender">
@@ -63,8 +63,8 @@
       <li>2030</li>
    </ul>
 </div>
-
         </div>
+        
      <section class="days">
         <div>SUN</div>
         <div>MON</div>
@@ -115,15 +115,19 @@
     <h4 class="schedule">Schedule</h4>
     <input type="text" id="eventTitle">
     <div>
-      <label for="scheduletoggle">Fullday</label>
-      <input id = "scheduletoggle" type="checkbox">
+      <label for="Fulldaytoggle">Fullday</label>
+      <input id = "Fulldaytoggle" type="checkbox">
     </div>
-    <div class="eventDetails">
-      <div class="startfrom">Start from:</div>
-      <div class="finish">Finish:</div>
-      <div>Repeat</div>
+  <!--  <div class="eventDetails">-->
+      <label for="startfrom" style="display: inline">Start from:
+      <input type="time" id="startfrom" >
+      </label>
+      <label for="finish" style="display: block" >Finish:
+      <input type="time" id="finish" style="display: inline">
+      </label>
+      <div class = "rep">Repeat</div>
       <div>Reminder</div>
-    </div>
+  <!--    </div>-->
   <div class="eventExtras">
     <input type="text" id="place" placeholder="Place">
     <input type="text" id="notes" placeholder="Notes">
