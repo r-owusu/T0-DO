@@ -107,33 +107,94 @@
   </div>
   <div class="addEvent">+</div>
 </section>
+
 <div class="hidden addEventPage">
   <div class="addEventHeader">
     <h3 class="backbutton">←</h3>
     <h3 id="done">✔</h3>
+
   </div>
+
     <h4 class="schedule">Schedule</h4>
-    <input type="text" id="eventTitle">
-    <div>
+    <input type="text" id="eventTitle" placeholder="Title">
+    <div class = "FullDaytoggleContainer">
       <label for="Fulldaytoggle">Fullday</label>
       <input id = "Fulldaytoggle" type="checkbox">
     </div>
-  <!--  <div class="eventDetails">-->
-      <label for="startfrom" style="display: inline">Start from:
-      <input type="time" id="startfrom" >
-      </label>
-      <label for="finish" style="display: block" >Finish:
-      <input type="time" id="finish" style="display: inline">
-      </label>
-      <div class = "rep">Repeat</div>
-      <div>Reminder</div>
-  <!--    </div>-->
+
+
+    <fieldset class="eventField">
+      <legend class = "eventDetails hidden">Event Details</legend>
+      <button type="button" class="eventRow" id="startfrom">
+        <span>Start from:</span> <span class ="eventRowValue">Mon, 08 Nov 2025 10:30 AM </span> <span> > </span>
+      </button>
+     <button type="button" class="eventRow" id="finish">
+    <span>Finish: </span> <span class ="eventRowValue">Mon, 08 Nov 2025 10:30 AM </span> <span> > </span>
+      </button>
+      <button type="button" class="eventRow" id="repeatButton">
+      <span>Repeat:</span> <span class ="eventRowValue"> One time </span>  <span> > </span>
+      </button>
+      <button type="button" class="eventRow" id="reminderButton">
+     <span>Reminder: </span> <span class ="eventRowValue">Before 5 minutes</span>  <span> > </span>
+      </button>
+      <input type="datetime-local" id="startTime" class="hidden">
+       <input type="datetime-local" id="finishTime" class="hidden">
+    </fieldset>
+<section class = "hidden repeatPopup">
+  <div>
+None
+</div>
+<div>
+Daily
+</div>
+<div>
+Weekly
+</div>
+<div>
+Monthly
+</div>
+<div>
+Annually
+</div>
+</section>
+<section class="hidden reminderPopup" >
+  <div>
+None
+</div>
+<div>
+At time of event
+</div>
+<div>
+5 minutes before
+</div>
+<div>
+10 minutes before
+</div>
+<div>
+15 minutes before
+</div>
+<div>
+30 minutes before
+</div>
+<div>
+1 hour before
+</div>
+<div>
+1 day before
+</div>
+</section>
   <div class="eventExtras">
     <input type="text" id="place" placeholder="Place">
     <input type="text" id="notes" placeholder="Notes">
   </div>
+ 
 </div>
 
+<section class="hidden notesPage">
+    <h3 class="backbuttonfornotes">←</h3>
+  <h2>Notes</h2>
+  <input type="textarea" id="notestextarea">
+</section>
 
         <script src="index.js"></script>
 </body>

@@ -11,6 +11,7 @@ schedule.onclick=function(){
 var dates = document.querySelector(".dates");
 var myDate = new Date();
 var selectedDay;
+var notesPage= document.querySelector(".notesPage");
 var date = function(){
   dates.innerHTML = "";
 //var numd;
@@ -159,7 +160,14 @@ done.onclick = function(){
 var eventTitleValue = document.querySelector('#eventTitle').value;
 var placeValue =document.querySelector('#place').value;
 var noteValue= document.querySelector('#notes').value;
-var isFullday = document.querySelector('#Fulldaytoggle').checked;
+var Fulldaytoggle = document.querySelector('#Fulldaytoggle');
+var eventField= document.querySelector(".eventField");
+
+ Fulldaytoggle.onclick=function(){
+  eventField.classList.add("fulldayClick");
+  
+ }
+
 var newEvent = document.createElement('div');
 newEvent.classList.add('event');
 
@@ -202,3 +210,124 @@ newEvent.appendChild(eventCard);
 scheduleContainer.appendChild(newEvent);
 addEventPage.classList.add("hidden");
 }
+var noteButton = document.querySelector(".noteButton");
+noteButton.onclick=function(){
+ if(notesPage.classList.contains("hidden")){
+  notesPage.classList.remove("hidden");
+ }
+ else {
+  notesPage.classList.add("hidden")
+ }
+}
+var backbuttonfornotes = document.querySelector(".backbuttonfornotes");
+backbuttonfornotes.onclick=function(){
+  notesPage.classList.add("hidden")
+}
+var startfrom = document.querySelector("#startfrom");
+var startTime= document.querySelector("#startTime");
+var StartfromEventRowValue = startfrom.querySelector(".eventRowValue");
+startTime.addEventListener('change', updateStartfield );
+
+
+function updateStartfield(){
+ var startTimeValue = startTime.value;
+ console.log(startTimeValue);
+ StartfromEventRowValue.innerText=startTimeValue;
+ var startobj = new Date(startTimeValue);
+ StartfromEventRowValue.innerText=startobj.toLocaleString('en-US', {weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: true});
+}
+
+
+startfrom.onclick = function() {
+    try {
+        startTime.showPicker();
+        console.log("Picker opened!");
+    } catch (error) {
+        console.log("showPicker not supported, trying click");
+        startTime.focus();
+        startTime.click();
+    }
+}
+
+
+
+
+
+
+var finish =document.querySelector("#finish");
+var finishEventRowValue = finish.querySelector(".eventRowValue");
+var finishTime = document.querySelector("#finishTime");
+finishTime.addEventListener("change", updatefinishfield);
+function updatefinishfield(){
+ var finishTimeValue = finishTime.value;
+ console.log(finishTimeValue);
+ finishEventRowValue.innerText=finishTimeValue;
+ var finishobj = new Date(finishTimeValue);
+ finishEventRowValue.innerText=finishobj.toLocaleString('en-US', {weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: true});
+}
+
+
+finish.onclick=function(){
+   finishTime.showPicker();
+}
+
+
+
+
+
+
+
+
+
+
+var repeatButton = document.querySelector("#repeatButton");
+var repeatPopup= document.querySelector(".repeatPopup");
+var repeatValueSpan = repeatButton.querySelector(".eventRowValue");
+
+repeatButton.onclick=function(){
+  if(repeatPopup.classList.contains("hidden")){
+  repeatPopup.classList.remove("hidden");
+  }
+  else{
+    repeatPopup.classList.add("hidden");
+  }
+}
+var repeatOptions = document.querySelectorAll(".repeatPopup>div");
+for(var i=0; i<repeatOptions.length; i++){
+   repeatOptions[i].onclick=function(){
+      var value = this.textContent;
+repeatValueSpan.textContent = value;
+repeatPopup.classList.add("hidden");
+   }
+}
+
+var reminderButton= document.querySelector("#reminderButton");
+var reminderPopup = document.querySelector(".reminderPopup");
+reminderButton.onclick=function(){
+   if(reminderPopup.classList.contains("hidden")){
+  reminderPopup.classList.remove("hidden");
+  }
+  else{
+    reminderPopup.classList.add("hidden");
+  }
+}
+ var reminderOptions = reminderPopup.querySelectorAll("div");
+ var reminderEventRowValue = reminderButton.querySelector(".eventRowValue");
+ for(var i=0; i<reminderOptions.length; i++){
+  reminderOptions[i].onclick=function(){
+reminderEventRowValue.textContent=this.textContent;
+reminderPopup.classList.add("hidden");
+  }
+ }

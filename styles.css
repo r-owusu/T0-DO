@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgb(33, 7, 57);
+    background-color: #1F1338;
     color: white;
     text-align: center;
     justify-content: center;
@@ -63,7 +63,7 @@ font-family: "Open Sans", sans-serif;
  background-color: rgb(82, 63, 154);
       
 }
-.schedulebutton, .note{ 
+.schedulebutton, .noteButton{ 
    flex: 1 ;
     padding: 0px;
     margin: 0px;
@@ -115,7 +115,15 @@ padding: 10px;
 .hidden {
     display: none;
     visibility: hidden;
+
 }
+/*#startTime {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+
+*/
 @media(max-width: 300px){
 .days{
     font-size: 13px;
@@ -191,22 +199,20 @@ padding: 10px;
 }
 .addEventPage{
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: rgb(47, 16, 84);
    display: flex;
 flex-direction: column;
 align-items: flex-start;
-justify-content: flex-start;
-    padding: 15px;
+justify-content: flex-start;  
     overflow-y: auto;
+    overflow-x: hidden;
     z-index: 100;
     color: white;
- 
-margin: 0 auto;
-
+    
 }
 .addEventHeader{
     display: grid;
@@ -325,5 +331,133 @@ margin: 0 auto;
 }
 
 #Fulldaytoggle {
-    border-radius: 50%;
+    position: relative;
+    appearance:none;
+
+    margin-right: 30px;
+    height: 18px;
+    width: 34px;
+    background-color: rgb(249, 233, 253);
+    border-radius: 15px;
+  
+}
+#Fulldaytoggle:checked{
+    background-color: rgb(222, 172, 249);
+}
+#Fulldaytoggle::before {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;   
+    background: rgb(23, 23, 23);
+    border-radius: 10px;
+    top:1px;
+    left: 1px;
+ transition-property: left;
+ transition-duration: 0.2s;
+ transition-timing-function: ease;
+ 
+}
+
+#Fulldaytoggle:checked::before {
+    position: absolute;
+    background-color:#fed7c2;
+     content: '';
+     height: 16px;
+    width: 16px;
+    left: 16px;
+    background: rgb(23, 23, 23);
+    border-radius: 10px;
+    top:1px;
+}
+.FullDaytoggleContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+notesPage{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #7E64FF;
+}
+#notestextarea {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-color: #7E64FF;
+    width: 100%;
+    height: 100%;
+}
+
+.backbuttonfornotes{
+    display: flex;
+    align-self: flex-start;
+    align-items: flex-end;
+    justify-content:last baseline;
+    margin-left: 0px;
+
+}
+.eventRow {
+    width: 100%;
+    background-color:transparent;
+    color: aliceblue;
+    border: 0px;
+    padding: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+    font-size: 16px;
+    font-style:normal;
+    line-height: 100%;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+ 
+}
+.eventRowValue{
+    margin-left: auto;
+       padding-right: 5px;
+    
+}
+.eventField {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 96%;
+    padding-right: 30px;
+ 
+}
+.fulldayClick{
+      pointer-events: none;
+     opacity: 0.15;
+}
+#time{
+    position:fixed;
+}
+.repeatPopup, .reminderPopup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #39045e;
+    padding: 10px;
+    color: #d9d5e0;
+   width:fit-content;
+   border-radius: 10px;
+   box-shadow: 1px 4px 10px rgb(70, 68, 68);
+   display: flex;
+   flex-direction: column;
+ 
+  
+}
+.repeatPopup>div, .reminderPopup>div {
+    border-bottom: 2px solid black;
+
 }
