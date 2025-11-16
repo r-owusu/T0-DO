@@ -1,3 +1,4 @@
+
 /*var note = document.querySelector(".note");
 var schedule= document.querySelector(".schedule");
 note.onclick=function(){
@@ -12,6 +13,8 @@ var dates = document.querySelector(".dates");
 var myDate = new Date();
 var selectedDay;
 var notesPage= document.querySelector(".notesPage");
+var datetrack = [];
+var scheduleContainer = document.querySelector('.scheduleContainer');
 var date = function(){
   dates.innerHTML = "";
 //var numd;
@@ -26,6 +29,7 @@ numd=28;
 else{
   numd=31;
 }*/
+
 
 
 
@@ -58,10 +62,99 @@ for(var i=0; i<firstDaynum;i++){
     }
     this.classList.add("active");
      selectedDay= this.innerHTML;
+
+    var monthNumber = myDate.getMonth()+1;
+var monthNumberString =monthNumber.toString();
+if(monthNumberString.length==1){
+  var newmonthNumberString ="0"+ monthNumberString;
+  monthNumberString=newmonthNumberString;
+}
+
+var selectedDayString = (selectedDay !== undefined ? selectedDay : myDate.getDate()).toString();
+if(selectedDayString.length==1){
+  var newselectedDayString= "0"+selectedDayString;
+  selectedDayString=newselectedDayString;
+}
+var label = myDate.getFullYear() +"-"+ monthNumberString+"-" + selectedDayString
+
+
+
+ scheduleContainer.innerHTML="";
+   var eventsFound=false;
+
+    for(var i=0;i<datetrack.length; i++){
+        if(datetrack[i].date === label){
+        eventsFound=true;
+            var circle= document.createElement('div');
+circle.classList.add('circle');
+var eventCard = document.createElement('div');
+eventCard.classList.add('eventCard');
+circle.innerHTML=selectedDay||myDate.getDate();
+var title = document.createElement('h4');
+title.innerHTML=datetrack[i].title;
+var place =document.createElement('p');
+place.innerHTML=datetrack[i].place;
+var notes = document.createElement('p');
+notes.innerHTML=datetrack[i].notes;
+var line = document.createElement('hr');
+eventCard.appendChild(title);
+line.classList.add("line");
+eventCard.appendChild(line);
+eventCard.appendChild(place);
+eventCard.appendChild(notes);
+var newEvent = document.createElement('div');
+newEvent.classList.add("event");
+newEvent.appendChild(circle);
+newEvent.appendChild(eventCard);
+scheduleContainer.appendChild(newEvent);
+
+        }
+     
+    }    
+if (eventsFound===false){
+  var noEventText = document.createElement("div");
+  noEventText.innerText="No events for this date";
+  scheduleContainer.appendChild(noEventText);
+}
+
+
+
+
+
+
+
+
+
     }
+   
+
   }
+
+
+
+var today = myDate.getDate();
+
+
+var allDivs = dates.children; 
+
+for (var i = 0; i < allDivs.length; i++) {
+    var div = allDivs[i];
+
+ 
+    if (div.innerHTML !== "") {
+
+        if (parseInt(div.innerHTML) === today) {
+            div.classList.add("active");
+            selectedDay = today;         
+        }
+    }
+}
+
+
+
 }
 date();
+var today = myDate.getDate();
 var monthNames=["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 var monthName=monthNames[myDate.getMonth()];
 console.log(myDate.getDate() + " "+monthName+" "+myDate.getFullYear() );
@@ -155,18 +248,26 @@ backbutton.onclick=function(){
 var done = document.querySelector("#done");
 var input = document.querySelectorAll('input');
 
-var scheduleContainer = document.querySelector('.scheduleContainer');
+var Fulldaytoggle = document.querySelector('#Fulldaytoggle');
+var eventField= document.querySelector(".eventField");
+var timespan = document.querySelector(".timespan");
+ Fulldaytoggle.onclick=function(){
+  if(timespan.classList.contains("blur")){
+  timespan.classList.remove("blur");
+}
+  else{
+    timespan.classList.add("blur")
+  }
+  console.log("Hello");
+ }
+
+
+
+
 done.onclick = function(){  
 var eventTitleValue = document.querySelector('#eventTitle').value;
 var placeValue =document.querySelector('#place').value;
 var noteValue= document.querySelector('#notes').value;
-var Fulldaytoggle = document.querySelector('#Fulldaytoggle');
-var eventField= document.querySelector(".eventField");
-
- Fulldaytoggle.onclick=function(){
-  eventField.classList.add("fulldayClick");
-  
- }
 
 var newEvent = document.createElement('div');
 newEvent.classList.add('event');
@@ -209,7 +310,61 @@ newEvent.appendChild(circle);
 newEvent.appendChild(eventCard);
 scheduleContainer.appendChild(newEvent);
 addEventPage.classList.add("hidden");
+
+
+const trackoject = {
+  date: label,
+  title: +eventTitleValue,
+  notes: noteValue,
+  place: placeValue
 }
+datetrack.push(trackoject);
+console.log(datetrack);
+
+
+scheduleContainer.innerHTML="";
+   var eventsFound=false;
+
+    for(var i=0;i<datetrack.length; i++){
+        if(datetrack[i].date === label){
+        eventsFound=true;
+            var circle= document.createElement('div');
+circle.classList.add('circle');
+var eventCard = document.createElement('div');
+eventCard.classList.add('eventCard');
+circle.innerHTML=selectedDay||myDate.getDate();
+var title = document.createElement('h4');
+title.innerHTML=datetrack[i].title;
+var place =document.createElement('p');
+place.innerHTML= "<strong>Place:</strong> " +datetrack[i].place;
+var notes = document.createElement('p');
+notes.innerHTML="<strong>Notes: </strong> "+datetrack[i].notes;
+var line = document.createElement('hr');
+eventCard.appendChild(title);
+line.classList.add("line");
+eventCard.appendChild(line);
+eventCard.appendChild(place);
+eventCard.appendChild(notes);
+var newEvent = document.createElement('div');
+newEvent.classList.add("event");
+newEvent.appendChild(circle);
+newEvent.appendChild(eventCard);
+scheduleContainer.appendChild(newEvent);
+
+        }
+     
+    }    
+if (eventsFound===false){
+  var noEventText = document.createElement("div");
+  noEventText.innerText="No events for this date";
+  scheduleContainer.appendChild(noEventText);
+}
+
+
+
+
+}
+
 var noteButton = document.querySelector(".noteButton");
 noteButton.onclick=function(){
  if(notesPage.classList.contains("hidden")){
@@ -329,5 +484,5 @@ reminderButton.onclick=function(){
   reminderOptions[i].onclick=function(){
 reminderEventRowValue.textContent=this.textContent;
 reminderPopup.classList.add("hidden");
-  }
- }
+}
+}

@@ -22,180 +22,184 @@
 
 </head>
 <body>
-    <section class="topsort">
- 
-    <button class="schedulebutton">Schedule</button>
-    <button class="noteButton">Note</button>
-    </div>
-    </section>
-    <section class="calender">
-       <div class="monthyear">
-        <div class="monthDropdown">
-            <h2 class="month">Month</h2>
-            <ul class="monthList hidden">
-               <li>JANUARY</li>
-               <li>FEBRUARY</li>
-               <li>MARCH</li>
-               <li>APRIL</li> 
-               <li>MAY</li>
-               <li>JUNE</li>
-               <li>JULY</li>
-               <li>AUGUST</li> 
-               <li>SEPTEMBER</li> 
-               <li>OCTOBER</li>
-               <li>NOVEMBER</li>
-               <li>DECEMBER</li> 
+  <section class="mainContent">
+              <section class="topsort">
+          
+              <button class="schedulebutton">Schedule</button>
+              <button class="noteButton">Note</button>
+              </div>
+              </section>
+              <section class="calender">
+                <div class="monthyear">
+                  <div class="monthDropdown">
+                      <h2 class="month">Month</h2>
+                      <ul class="monthList hidden">
+                        <li>JANUARY</li>
+                        <li>FEBRUARY</li>
+                        <li>MARCH</li>
+                        <li>APRIL</li> 
+                        <li>MAY</li>
+                        <li>JUNE</li>
+                        <li>JULY</li>
+                        <li>AUGUST</li> 
+                        <li>SEPTEMBER</li> 
+                        <li>OCTOBER</li>
+                        <li>NOVEMBER</li>
+                        <li>DECEMBER</li> 
+                      </ul>
+                  </div>
+                  <div class="yearDropdown">
+            <h2 class="year">2025</h2>
+            <ul class="yearList hidden">
+                <li>2020</li>
+                <li>2021</li>
+                <li>2022</li>
+                <li>2023</li>
+                <li>2024</li>
+                <li>2025</li>
+                <li>2026</li>
+                <li>2027</li>
+                <li>2028</li>
+                <li>2029</li>
+                <li>2030</li>
             </ul>
-         </div>
-        <div class="yearDropdown">
-   <h2 class="year">2025</h2>
-   <ul class="yearList hidden">
-      <li>2020</li>
-      <li>2021</li>
-      <li>2022</li>
-      <li>2023</li>
-      <li>2024</li>
-      <li>2025</li>
-      <li>2026</li>
-      <li>2027</li>
-      <li>2028</li>
-      <li>2029</li>
-      <li>2030</li>
-   </ul>
-</div>
-        </div>
-        
-     <section class="days">
-        <div>SUN</div>
-        <div>MON</div>
-        <div>TUE</div>
-       <div>WED</div>
-        <div>THU</div>
-        <div>FRI</div>
-        <div> SAT</div>
-        </section>
-     <section class="dates"></section>
+          </div>
+                  </div>
+                  
+              <section class="days">
+                  <div>SUN</div>
+                  <div>MON</div>
+                  <div>TUE</div>
+                <div>WED</div>
+                  <div>THU</div>
+                  <div>FRI</div>
+                  <div> SAT</div>
+                  </section>
+              <section class="dates"></section>
 
-    </section>
-    <section class="schedulepage"> 
-  <div class="scheduleContainer">
-    
-    <div class="timeline"></div>
+              </section>
+              <section class="schedulepage"> 
+            <div class="scheduleContainer">
+              
+              <div class="timeline"></div>
 
- 
-    <div class="event">
-      <div class="circle">20</div>
-      <div class="eventCard">
-        <h4>Meeting with Anomali Team</h4>
-        <hr class="line">
-        <p><strong>Time:</strong> 07.00 am - 10.00 am</p>
-        <p><strong>Place:</strong> Anomali Office</p>
-        <p><strong>Notes:</strong> Nothing</p>
-      </div>
-    </div>
+          
+              <div class="event">
+                <div class="circle">20</div>
+                <div class="eventCard">
+                  <h4>Meeting with Anomali Team</h4>
+                  <hr class="line">
+                  <p><strong>Time:</strong> 07.00 am - 10.00 am</p>
+                  <p><strong>Place:</strong> Anomali Office</p>
+                  <p><strong>Notes:</strong> Nothing</p>
+                </div>
+              </div>
 
-    <div class="event">
-      <div class="circle">26</div>
-      <div class="eventCard">
-        <h4>Dinner with Anna</h4>
-        <hr class="line">
-        <p><strong>Time:</strong> 08.00 pm</p>
-        <p><strong>Place:</strong> Anna's House</p>
-        <p><strong>Notes:</strong> Don’t forget to bring flowers</p>
-      </div>
-    </div>    
-  </div>
-  <div class="addEvent">+</div>
+              <div class="event">
+                <div class="circle">26</div>
+                <div class="eventCard">
+                  <h4>Dinner with Anna</h4>
+                  <hr class="line">
+                  <p><strong>Time:</strong> 08.00 pm</p>
+                  <p><strong>Place:</strong> Anna's House</p>
+                  <p><strong>Notes:</strong> Don’t forget to bring flowers</p>
+                </div>
+              </div>    
+            </div>
+            <div class="addEvent">+</div>
+          </section>
+
+  <div class="hidden addEventPage">
+          <div class="eventPage">
+            <div class="addEventHeader">
+              <h3 class="backbutton">←</h3>
+              <h3 id="done">✔</h3>
+
+            </div>
+
+              <h4 class="schedule">Schedule</h4>
+              <input type="text" id="eventTitle" placeholder="Title">
+              <div class = "FullDaytoggleContainer">
+                <label for="Fulldaytoggle">Fullday</label>
+                <input id = "Fulldaytoggle" type="checkbox">
+              </div>
+
+
+              <fieldset class="eventField">
+                <legend class = "eventDetails hidden">Event Details</legend>
+                <div class="timespan blur">
+                    <button type="button" class="eventRow" id="startfrom">
+                      <span>Start from:</span> <span class ="eventRowValue">Mon, 08 Nov 2025 10:30 AM </span> <span> > </span>
+                    </button>
+                    <button type="button" class="eventRow" id="finish">
+                      <span>Finish: </span> <span class ="eventRowValue">Mon, 08 Nov 2025 10:30 AM </span> <span> > </span>
+                    </button>
+                </div>
+                <button type="button" class="eventRow" id="repeatButton">
+                <span>Repeat:</span> <span class ="eventRowValue"> One time </span>  <span> > </span>
+                </button>
+                <button type="button" class="eventRow" id="reminderButton">
+              <span>Reminder: </span> <span class ="eventRowValue">Before 5 minutes</span>  <span> > </span>
+                </button>
+                <input type="datetime-local" id="startTime" class="hidden">
+                <input type="datetime-local" id="finishTime" class="hidden">
+              </fieldset>
+          <section class = "hidden repeatPopup">
+            <div>
+          None
+          </div>
+          <div>
+          Daily
+          </div>
+          <div>
+          Weekly
+          </div>
+          <div>
+          Monthly
+          </div>
+          <div>
+          Annually
+          </div>
+          </section>
+          <section class="hidden reminderPopup" >
+            <div>
+          None
+          </div>
+          <div>
+          At time of event
+          </div>
+          <div>
+          5 minutes before
+          </div>
+          <div>
+          10 minutes before
+          </div>
+          <div>
+          15 minutes before
+          </div>
+          <div>
+          30 minutes before
+          </div>
+          <div>
+          1 hour before
+          </div>
+          <div>
+          1 day before
+          </div>
+          </section>
+            <div class="eventExtras">
+              <input type="text" id="place" placeholder="Place">
+              <input type="text" id="notes" placeholder="Notes">
+            </div>
+        </div>  
+          </div>
+
+          <section class="hidden notesPage">
+              <h3 class="backbuttonfornotes">←</h3>
+            <h2>Notes</h2>
+            <textarea  id="notestextarea"> </textarea>
+          </section>
 </section>
-
-<div class="hidden addEventPage">
-  <div class="addEventHeader">
-    <h3 class="backbutton">←</h3>
-    <h3 id="done">✔</h3>
-
-  </div>
-
-    <h4 class="schedule">Schedule</h4>
-    <input type="text" id="eventTitle" placeholder="Title">
-    <div class = "FullDaytoggleContainer">
-      <label for="Fulldaytoggle">Fullday</label>
-      <input id = "Fulldaytoggle" type="checkbox">
-    </div>
-
-
-    <fieldset class="eventField">
-      <legend class = "eventDetails hidden">Event Details</legend>
-      <button type="button" class="eventRow" id="startfrom">
-        <span>Start from:</span> <span class ="eventRowValue">Mon, 08 Nov 2025 10:30 AM </span> <span> > </span>
-      </button>
-     <button type="button" class="eventRow" id="finish">
-    <span>Finish: </span> <span class ="eventRowValue">Mon, 08 Nov 2025 10:30 AM </span> <span> > </span>
-      </button>
-      <button type="button" class="eventRow" id="repeatButton">
-      <span>Repeat:</span> <span class ="eventRowValue"> One time </span>  <span> > </span>
-      </button>
-      <button type="button" class="eventRow" id="reminderButton">
-     <span>Reminder: </span> <span class ="eventRowValue">Before 5 minutes</span>  <span> > </span>
-      </button>
-      <input type="datetime-local" id="startTime" class="hidden">
-       <input type="datetime-local" id="finishTime" class="hidden">
-    </fieldset>
-<section class = "hidden repeatPopup">
-  <div>
-None
-</div>
-<div>
-Daily
-</div>
-<div>
-Weekly
-</div>
-<div>
-Monthly
-</div>
-<div>
-Annually
-</div>
-</section>
-<section class="hidden reminderPopup" >
-  <div>
-None
-</div>
-<div>
-At time of event
-</div>
-<div>
-5 minutes before
-</div>
-<div>
-10 minutes before
-</div>
-<div>
-15 minutes before
-</div>
-<div>
-30 minutes before
-</div>
-<div>
-1 hour before
-</div>
-<div>
-1 day before
-</div>
-</section>
-  <div class="eventExtras">
-    <input type="text" id="place" placeholder="Place">
-    <input type="text" id="notes" placeholder="Notes">
-  </div>
- 
-</div>
-
-<section class="hidden notesPage">
-    <h3 class="backbuttonfornotes">←</h3>
-  <h2>Notes</h2>
-  <input type="textarea" id="notestextarea">
-</section>
-
         <script src="index.js"></script>
 </body>
 </html>
