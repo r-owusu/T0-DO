@@ -56,14 +56,35 @@ font-family: "Open Sans", sans-serif;
  font-size: 50px;
  padding-top: 90px;
 }
+
+
+header{
+    display: flex;
+    
+    font-size: 24px;
+    top:688px ;
+    justify-content: space-between;
+    text-align: center;
+    margin: 8px;
+    margin-top: 35px;
+}
+
+
+.notifyButton{
+margin-left: 230px;
+font-size: 19px;
+}
+
+
 .topsort {
+    position:relative;
    display: flex;
   
     border-radius: 10px;
-   width: auto;   
-    padding: 0px;
-   
-    margin-top: 20px;
+   width: 260px;
+   height: 40px;   
+   top: 30px;
+   left: 58px;
  background-color: rgb(82, 63, 154);
       
 }
@@ -100,10 +121,7 @@ cursor: pointer;
     padding: 15px;
     
 }
-.calender {
-    border: 5px solid rgb(219, 218, 232);
-    padding: 20px;
-}
+
 .days{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -112,7 +130,12 @@ cursor: pointer;
     gap: 0px;
 }
 .calender{
-    display: grid;
+position: static;
+      display: grid;
+  
+    padding: 20px;
+ margin-top: 80px;
+
 }
 .dates{
     display: grid;
@@ -400,7 +423,7 @@ flex-direction: column;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #7E64FF;
+    background-color: #3A3372;
     cursor: text;
     margin: 0px;
     border: 0px;
@@ -496,4 +519,86 @@ flex-direction: column;
     font-size: 20px;
   }
   
+}
+.addNote{
+    position: fixed;
+    font-size: 40px;
+    bottom: 15px;
+    right: 10px;
+ height: 60px;
+    width: 60px;
+    background-color: #7E64FF;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    justify-self: right;
+ 
+}
+#searchNotes {
+    position: fixed;
+    background-color: #CCC2FE;
+    border: none;
+    width: 320px;
+    border-radius: 20px;
+    height: 40px;
+    top: 160px;
+    left: 24px;
+    right: 30px;
+   
+}
+.notetext {
+    position: relative;
+    
+    background-color: #7E64FF;
+    border-radius: 8px;
+    width: 320px;
+    left: 24px;
+    gap: 12px;
+    color: white;
+    height: 100px;
+    margin-bottom: 12px;
+
+}
+.notesSection{
+margin-top: 130px;
+}
+.writeNotes{
+    position: fixed;
+    background-color:#7E64FF;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+}
+#noteText{
+    height: 100vh;
+    width: 100vw;
+    background-color: #7E64FF;
+    border: 0px;
+}
+.titlefornotes {
+display: flex;
+margin-left: 10px;
+background-color: #7E64FF;
+border: 0px;
+padding: 0px;
+margin: 20px;
+} 
+.headerforwritenotes{
+    display: flex;
+    justify-content: space-between;
+    background-color: #7E64FF;
+    border: 0px;
+padding: 0px;
+margin: 20px;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+   
+}
+#dots{
+    font-size: 22px;
 }

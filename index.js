@@ -314,7 +314,7 @@ addEventPage.classList.add("hidden");
 
 const trackoject = {
   date: label,
-  title: +eventTitleValue,
+  title: eventTitleValue,
   notes: noteValue,
   place: placeValue
 }
@@ -486,3 +486,52 @@ reminderEventRowValue.textContent=this.textContent;
 reminderPopup.classList.add("hidden");
 }
 }
+var addNote = document.querySelector(".addNote");
+
+let activeNote = null;
+var writeNotes=document.querySelector(".writeNotes");
+
+addNote.onclick=function(){
+ console.log("God is good");
+  var note = document.createElement("div");
+ note.classList.add("notetext");
+ var notesSection = document.querySelector(".notesSection");
+ notesSection.appendChild(note);
+ note.onclick=function(){
+ activeNote=note;
+writeNotes.classList.remove("hidden");
+if(note.hasChildNodes()){
+var text =  note.firstElementChild.innerText;
+noteText.value=text
+
+}
+ }
+}
+
+
+var backforwritenote = document.querySelector(".backforwritenote");
+var noteText = document.querySelector("#noteText");
+
+backforwritenote.onclick=function(){
+  var  noteTextValue = document.querySelector("#noteText").value;
+  if(activeNote.hasChildNodes()){
+   activeNote.firstElementChild.innerText = noteTextValue;
+   writeNotes.classList.add("hidden");
+  }
+  else{
+var notechild=document.createElement('div');
+notechild.innerText=noteTextValue;
+activeNote.appendChild(notechild);
+writeNotes.classList.add("hidden");
+  }
+  noteText.value="";
+
+}
+
+
+
+
+
+
+
+

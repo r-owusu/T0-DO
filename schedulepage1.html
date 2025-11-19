@@ -23,6 +23,11 @@
 </head>
 <body>
   <section class="mainContent">
+    <header>
+      <div>ontime</div>
+      <div class="notifyButton">🔔︎</div>
+      <div>⋮</div>
+    </header>
               <section class="topsort">
           
               <button class="schedulebutton">Schedule</button>
@@ -196,8 +201,36 @@
 
           <section class="hidden notesPage">
               <h3 class="backbuttonfornotes">←</h3>
-            <h2>Notes</h2>
-            <textarea  id="notestextarea"> </textarea>
+
+
+
+
+               <section class="topsort">
+          
+              <button class="schedulebutton">Schedule</button>
+              <button class="noteButton">Note</button>
+              </div>
+              </section>
+
+
+
+
+            <input type = "text" id = "searchNotes" placeholder="Search Note">
+            <div class="notesSection">
+            
+            </div>
+            <div class="hidden writeNotes">
+               <section class="headerforwritenotes">
+                    <div class="backforwritenote">←</div>
+       
+                 <div class="buttons"><div>📌︎</div> <div id="dots" >⋮</div></div>
+                 </section>
+                  <div class="titlefornotes">Title</div>
+                 <textarea id="noteText"></textarea>
+                               
+            </div>
+            <div class="addNote">+</div>
+
           </section>
 </section>
         <script src="index.js"></script>
